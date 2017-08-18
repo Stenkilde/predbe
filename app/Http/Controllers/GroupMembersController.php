@@ -14,6 +14,11 @@ class GroupMembersController extends Controller
         return $groupMembers;
     }
 
+    public function join($id)
+    {
+        return $id;
+    }
+
     public function single($id)
     {
         $groupMember = GroupMember::where('id', $id)->first();

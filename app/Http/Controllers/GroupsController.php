@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Webpatser\Uuid\Uuid;
 use App\Group;
 use App\GroupMember;
 use App\User;
@@ -15,6 +16,19 @@ class GroupsController extends Controller
         $groups = Group::all();
 
         return $groups;
+    }
+
+    public function create(Request $request)
+    {
+        $group = new Group;
+
+        $group->id = Uuid::generate(4);
+        $group->tournament_id = $request->tournament_id;
+        $group->user_id = $request->user_id;
+
+        $group->save();
+
+        return $group;
     }
 
     public function single($id)

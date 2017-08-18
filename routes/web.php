@@ -11,27 +11,29 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/api/', function () {
     return view('welcome');
 });
 
-Route::get('/teams', 'TeamsController@index');
-Route::get('/team/{id}', 'TeamsController@single');
+Route::get('/api/teams', 'TeamsController@index');
+Route::get('/api/team/{id}', 'TeamsController@single');
 
-Route::get('/games', 'GamesController@index');
-Route::get('/game/{id}', 'GamesController@single');
+Route::get('/api/games', 'GamesController@index');
+Route::get('/api/game/{id}', 'GamesController@single');
 
-Route::get('/tournaments', 'TournamentsController@index');
-Route::get('/tournament/{id}', 'TournamentsController@single');
+Route::get('/api/tournaments', 'TournamentsController@index');
+Route::get('/api/tournament/{id}', 'TournamentsController@single');
 
-Route::get('/serie/players', 'SeriePlayersController@index');
-Route::get('/serie/player/{id}', 'SeriePlayersController@single');
+Route::get('/api/serie/players', 'SeriePlayersController@index');
+Route::get('/api/serie/player/{id}', 'SeriePlayersController@single');
 
-Route::get('/series', 'SeriesController@index');
-Route::get('/serie/{id}', 'SeriesController@single');
+Route::get('/api/series', 'SeriesController@index');
+Route::get('/api/serie/{id}', 'SeriesController@single');
 
-Route::get('/group/members', 'GroupMembersController@index');
-Route::get('/group/members/{id}', 'GroupMembersController@single');
+Route::get('/api/group/members', 'GroupMembersController@index');
+Route::post('/api/group/{id}', 'GroupMembersController@join');
+Route::get('/api/group/members/{id}', 'GroupMembersController@single');
 
-Route::get('/groups', 'GroupsController@index');
-Route::get('/group/{id}', 'GroupsController@single');
+Route::get('/api/groups', 'GroupsController@index');
+Route::post('/api/group', 'GroupsController@create');
+Route::get('/api/group/{id}', 'GroupsController@single');
