@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\GroupMember;
+use App\GroupMember;
 
 class GroupMembersController extends Controller
 {
@@ -14,9 +14,16 @@ class GroupMembersController extends Controller
         return $groupMembers;
     }
 
-    public function join($id)
+    public function join(Request $request)
     {
-        return $id;
+        $groupMember = new GroupMember;
+
+        $groupMember->group_id = $request->input('group_id');
+        $groupMember->user_id = $request->input('user_id');
+
+        $groupMember->save();
+
+        return $groupMember;
     }
 
     public function single($id)

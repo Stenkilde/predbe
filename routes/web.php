@@ -31,7 +31,7 @@ Route::get('/api/series', 'SeriesController@index');
 Route::get('/api/serie/{id}', 'SeriesController@single');
 
 Route::get('/api/group/members', 'GroupMembersController@index');
-Route::post('/api/group/{id}', 'GroupMembersController@join');
+Route::post('/api/group/join', 'GroupMembersController@join');
 Route::get('/api/group/members/{id}', 'GroupMembersController@single');
 
 Route::get('/api/groups', 'GroupsController@index');
