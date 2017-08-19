@@ -15,7 +15,7 @@ class GroupMember extends Migration
     {
         Schema::create('group_members', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('group_id');
+            $table->string('group_id');
             $table->integer('user_id');
             $table->timestamps();
         });
