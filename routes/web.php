@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/api/', function () {
-    return view('welcome');
-});
-
 Route::get('/api/teams', 'TeamsController@index');
 Route::get('/api/team/{id}', 'TeamsController@single');
 
@@ -37,3 +32,7 @@ Route::get('/api/group/members/{id}', 'GroupMembersController@single');
 Route::get('/api/groups', 'GroupsController@index');
 Route::post('/api/group', 'GroupsController@create');
 Route::get('/api/group/{id}', 'GroupsController@single');
+
+// User Routes
+Route::post('/api/user', 'UserController@create');
+Route::post('/api/auth', 'AuthController@authenticate');

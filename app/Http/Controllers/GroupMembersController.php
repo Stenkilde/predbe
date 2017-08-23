@@ -28,7 +28,7 @@ class GroupMembersController extends Controller
 
     public function single($id)
     {
-        $groupMember = GroupMember::where('id', $id)->first();
+        $groupMember = GroupMember::where('user_id', $id)->get();
 
         return $groupMember;
     }

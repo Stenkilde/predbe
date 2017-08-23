@@ -166,7 +166,8 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        // Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,6 +229,8 @@ return [
          * Package Facades...
          */
          'Uuid' => Webpatser\Uuid\Uuid::class,
+         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+
     ],
 
 ];
