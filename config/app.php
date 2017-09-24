@@ -230,7 +230,6 @@ return [
          */
          'Uuid' => Webpatser\Uuid\Uuid::class,
          'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-
     ],
 
 ];

@@ -8,10 +8,11 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('jwt.auth');
+    public function __construct() 
+    { 
+        $this->middleware('jwt.auth', ['except' => ['authenticate']]); 
     }
+
 
     public function authenticate(Request $request)
     {
