@@ -36,3 +36,4 @@ Route::get('/api/group/{id}', 'GroupsController@single');
 // User Routes
 Route::post('/api/user', 'UserController@create');
 Route::post('/api/auth', 'AuthController@authenticate');
+Route::post('/api/me', 'AuthController@me');
