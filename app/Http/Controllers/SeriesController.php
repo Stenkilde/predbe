@@ -18,7 +18,7 @@ class SeriesController extends Controller
     public function single($id)
     {
         $serie = Serie::where('id', $id)->first();
-        $teams = Serie::find(1)->player;
+        $teams = Serie::find($serie->id)->player;
 
         $newTeams = [];
 

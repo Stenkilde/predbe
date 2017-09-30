@@ -35,15 +35,7 @@ class GroupsController extends Controller
 
     public function single($id)
     {
-        $group = Group::where('id', $id)->first();
-
-        $user = Group::find($group->user_id)->User;
-        $members = Group::find($id)->GroupMember;
-        $tournament = Group::find($group->tournament_id)->Tournament;
-
-        $group->admin = $user;
-        $group->members = $members;
-        $group->tournament = $tournament;
+        $group = Group::where('id', $id)->with('user', 'groupmember', 'tournament')->first();
 
         return $group;
     }

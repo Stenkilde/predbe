@@ -15,11 +15,11 @@ class Group extends Model
     
     public function GroupMember()
     {
-        return $this->hasMany('App\GroupMember', 'group_id');
+        return $this->hasMany('App\GroupMember');
     }
 
     public function Tournament()
     {
-        return $this->hasOne('App\Tournament', 'id');
+        return $this->hasOne('App\Tournament', 'id', 'tournament_id');
     }
 }

@@ -8,7 +8,7 @@ class Serie extends Model
 {
     public function player()
     {
-        return $this->hasMany('App\SeriePlayer', 'serie_id');
+        return $this->hasMany('App\SeriePlayer', 'serie_id', 'id');
     }
 
     public function team()
